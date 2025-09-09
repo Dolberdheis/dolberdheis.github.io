@@ -1,0 +1,62 @@
+/* 移动优先响应式设计 */
+:root {
+    --primary-color: #ff4757;
+    --secondary-color: #2f3542;
+}
+
+/* 基础样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 导航栏样式 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: var(--secondary-color);
+    color: white;
+}
+
+.geo-switcher button {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+/* 首屏样式 */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('placeholder.jpg') center/cover;
+    color: white;
+}
+
+.cta-main {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 2rem 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .cta-main {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        padding: 1.5rem;
+    }
+}
