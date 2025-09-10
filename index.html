@@ -1,43 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 这里替换联盟链接 -->
+    <!-- mylead-verification: 4c8056dd8b992f74b40229278e012bec -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Dating Hub</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="ppck-ver" content="039286c5864b00e5575799cd2905d9d2" />
+    <title>amorqX - Professional Dating Guidance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="logo">DatingHub</div>
-        <div class="geo-switcher">
-            <button data-geo="US" class="active">🇺🇸 US</button>
-            <button data-geo="NO">🇳🇴 NO</button>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">amorqX</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dating-tips.html">Dating Tips</a></li>
+                <li><a href="success-stories.html">Success Stories</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- 首屏内容 -->
-    <section class="hero">
-        <h1 data-lang="US">Meet local singles tonight — free & anonymous</h1>
-        <h1 data-lang="NO" style="display:none">Møt lokale single i kveld — gratis & anonymt</h1>
-        
-        <p class="subtitle" data-lang="US">Create a free profile and start chatting in minutes.</p>
-        <p class="subtitle" data-lang="NO" style="display:none">Opprett en gratis profil og start å chatte på minutter.</p>
-        
-        <button class="cta-main" onclick="handleCTA()">Start Chatting Now</button>
-        
-        <p class="social-proof" data-lang="US">1,283 people joined in the last 24 hours</p>
-        <p class="social-proof" data-lang="NO" style="display:none">1 283 personer har registrert seg de siste 24 timene</p>
-    </section>
+    <header class="hero pencil-bg">
+        <div class="container">
+            <h1>Find Your Romantic Love</h1>
+            <p>Professional dating guidance to help you find true happiness</p>
+            <div style="margin-top: 30px; text-align: center;">
+                // 顶部广告（第37行）
+                <a href="https://savebig.pro/a/W6w6ls5KR7sKP9B" class="btn new-promo" id="hero-new-promo-btn" target="_blank" style="background: #ff6b6b; color: white; font-weight: bold; padding: 20px 40px; font-size: 20px; border-radius: 30px; text-decoration: none; display: inline-block; margin: 10px; box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3); transition: all 0.3s ease;">🚀 Join Now - Free Registration!</a>
+                <a href="dating-tips.html" class="btn" style="margin: 10px;">Explore Dating Tips</a>
+            </div>
+        </div>
+    </header>
 
-    <!-- GDPR Consent -->
-    <div class="cookie-consent">
-        <p>We use cookies to improve your experience. <a href="#">Learn more</a></p>
-        <button onclick="acceptCookies()">Accept</button>
-        <button onclick="declineCookies()">Decline</button>
-    </div>
+
+
+    <main>
+
+        <section class="intro fade-in">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Heart Connectors is a platform dedicated to providing high-quality dating guidance. Our team consists of experienced relationship experts committed to helping each user improve their dating skills and find their ideal partner.</p>
+            </div>
+        </section>
+
+        <section class="featured-tips fade-in delay-1">
+            <div class="container">
+                <h2>Popular Dating Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card pencil-card">
+                <img src="https://picsum.photos/600/400?random=1" alt="First Date Tips" class="article-image pencil-border">
+                        <h3>First Date Tips</h3>
+                        <p>First dates are always full of nervousness and expectation. Master these tips to make your date go more smoothly.</p>
+                        <a href="dating-tips.html#first-date" class="btn-sm">Read More</a>
+                    </div>
+                    <div class="tip-card pencil-card">
+                <img src="https://picsum.photos/600/400?random=2" alt="Effective Communication" class="article-image pencil-border">
+                        <h3>Effective Communication</h3>
+                        <p>Good communication is the foundation of building relationships. Learn how to communicate effectively with the opposite sex.</p>
+                        <a href="dating-tips.html#communication" class="btn-sm">Read More</a>
+                    </div>
+                    <div class="tip-card pencil-card">
+                <img src="https://picsum.photos/600/400?random=3" alt="Online Dating Guide" class="article-image pencil-border">
+                        <h3>Online Dating Guide</h3>
+                        <p>In the digital age, online dating has become the norm. Master these tips to increase your matching success rate.</p>
+                        <a href="dating-tips.html#online-dating" class="btn-sm">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="success-stories fade-in delay-2">
+            <div class="container">
+                <h2>Success Stories</h2>
+                <div class="stories-grid">
+                    <div class="story-card pencil-card">
+                        <h3>From Friends to Lovers</h3>
+                        <p class="quote">"Thanks to Heart Connectors' guidance, I finally gathered the courage to confess to my long-time crush, and now we've been together for a year!"</p>
+                        <p class="author">— Mr. James Anderson, 28</p>
+                        <a href="success-stories.html#story1" class="btn-sm">Read Full Story</a>
+                    </div>
+                    <div class="story-card pencil-card">
+                        <h3>Happiness in Second Marriage</h3>
+                        <p class="quote">"After my divorce, I lost faith in love until I met Heart Connectors. They helped me rebuild my confidence, and now I've found the love of my life."</p>
+                        <p class="author">— Ms. Emma Thompson, 35</p>
+                        <a href="success-stories.html#story2" class="btn-sm">Read Full Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section fade-in delay-3" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); padding: 80px 0; margin: 50px 0; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+            <div class="container" style="text-align: center; color: white;">
+                <h2 style="color: white; margin-bottom: 25px; font-size: 2.5em;">💕 Ready to Start Your Love Journey?</h2>
+                <p style="font-size: 20px; margin-bottom: 40px; color: white; max-width: 600px; margin-left: auto; margin-right: auto;">Join thousands of successful singles and create your account today for exclusive access to premium dating features!</p>
+                // 底部广告（第117行）
+                <a href="https://savebig.pro/a/W6w6ls5KR7sKP9B" class="btn new-promo" id="main-new-promo-btn" target="_blank" style="background: white; color: #ff6b6b; font-weight: bold; padding: 20px 40px; font-size: 20px; border-radius: 30px; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(255,255,255,0.3); transform: scale(1.05);">✨ Create Account - Start Today! ✨</a>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer class="pencil-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">amorqX</div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dating-tips.html">Dating Tips</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 amorqX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
