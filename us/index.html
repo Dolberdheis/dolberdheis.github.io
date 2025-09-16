@@ -1,43 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 这里替换联盟链接 -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Dating Hub</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet Singles Near You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .container {
+      background: rgba(0,0,0,0.65);
+      padding: 30px 20px;
+      border-radius: 20px;
+      max-width: 720px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+    .stats, .recent-users {
+      background: rgba(255,255,255,0.08);
+      padding: 15px;
+      border-radius: 15px;
+      margin: 15px 0;
+      text-align: center;
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+    }
+    .stats p {
+      margin: 8px 0;
+      font-size: 1rem;
+      color: #fff;
+    }
+    .btn {
+      background: linear-gradient(135deg, #ff3366, #ff0033);
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      margin: 15px 0;
+      box-shadow: 0 4px 10px rgba(255,0,51,0.4);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(255,0,51,0.6);
+    }
+    .recent-users h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    .user-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .user-card {
+      background: rgba(255,255,255,0.1);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+    .user-card img {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ff3366;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      display: none;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #bbb;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      p { font-size: 1rem; }
+      .btn { width: 100%; font-size: 1.1rem; }
+      .user-card { font-size: 0.9rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="logo">DatingHub</div>
-        <div class="geo-switcher">
-            <button data-geo="US" class="active">🇺🇸 US</button>
-            <button data-geo="NO">🇳🇴 NO</button>
-        </div>
-    </nav>
+  <div class="container">
+    <h1>Meet Singles Near You</h1>
+    <p>Find real connections with people across the U.S.<br>
+       Join now and start chatting today.</p>
 
-    <!-- 首屏内容 -->
-    <section class="hero">
-        <h1 data-lang="US">Meet local singles tonight — free & anonymous</h1>
-        <h1 data-lang="NO" style="display:none">Møt lokale single i kveld — gratis & anonymt</h1>
-        
-        <p class="subtitle" data-lang="US">Create a free profile and start chatting in minutes.</p>
-        <p class="subtitle" data-lang="NO" style="display:none">Opprett en gratis profil og start å chatte på minutter.</p>
-        
-        <button class="cta-main" onclick="handleCTA()">Start Chatting Now</button>
-        
-        <p class="social-proof" data-lang="US">1,283 people joined in the last 24 hours</p>
-        <p class="social-proof" data-lang="NO" style="display:none">1 283 personer har registrert seg de siste 24 timene</p>
-    </section>
+    <!-- 顶部 CTA 按钮 -->
+    <a href="https://savebig.pro/a/W6w6ls5KR7sKP9B" class="btn">Join the Community</a>
 
-    <!-- GDPR Consent -->
-    <div class="cookie-consent">
-        <p>We use cookies to improve your experience. <a href="#">Learn more</a></p>
-        <button onclick="acceptCookies()">Accept</button>
-        <button onclick="declineCookies()">Decline</button>
+    <!-- 动态数据 -->
+    <div class="stats">
+      <p><span id="onlineUsers">2347</span> members online right now</p>
+      <p><span id="matches">58021</span> successful matches this month</p>
     </div>
 
-    <script src="script.js"></script>
+    <!-- 最近加入 -->
+    <div class="recent-users">
+      <h3>Recently joined members</h3>
+      <div class="user-grid" id="userList"></div>
+    </div>
+
+    <!-- 底部 CTA 按钮 -->
+    <a href="https://savebig.pro/a/W6w6ls5KR7sKP9B" class="btn">Start Free Today</a>
+
+    <footer>© 2025 Dating Network • Safe & Secure</footer>
+  </div>
+
+  <!-- 动态提示框 -->
+  <div id="notification" class="notification"></div>
+
+  <script>
+    // 在线人数 & 配对数
+    function updateStats() {
+      let online = document.getElementById("onlineUsers");
+      let matches = document.getElementById("matches");
+      let currentOnline = parseInt(online.innerText);
+      let currentMatches = parseInt(matches.innerText);
+      currentOnline += Math.floor(Math.random() * 10 - 5);
+      if (currentOnline < 2000) currentOnline = 2000;
+      online.innerText = currentOnline;
+      currentMatches += Math.floor(Math.random() * 3);
+      matches.innerText = currentMatches;
+    }
+    setInterval(updateStats, 3000);
+
+    // 模拟用户
+    const users = [
+      {name: "Emily, 25", city: "New York", img: "https://i.pravatar.cc/50?img=5"},
+      {name: "John, 29", city: "Chicago", img: "https://i.pravatar.cc/50?img=12"},
+      {name: "Sophia, 27", city: "Los Angeles", img: "https://i.pravatar.cc/50?img=18"},
+      {name: "Michael, 31", city: "Houston", img: "https://i.pravatar.cc/50?img=22"},
+      {name: "Olivia, 24", city: "Miami", img: "https://i.pravatar.cc/50?img=36"}
+    ];
+    const userList = document.getElementById("userList");
+    users.forEach(u => {
+      let div = document.createElement("div");
+      div.className = "user-card";
+      div.innerHTML = `<img src="${u.img}" width="40" height="40"> <span>${u.name} - ${u.city}</span>`;
+      userList.appendChild(div);
+    });
+
+    // 通知
+    const notifications = [
+      "Anna just joined from Los Angeles ✅",
+      "David matched with Sarah 💕",
+      "Jessica started chatting with Mike 💌",
+      "Tom found a new match 🔥",
+      "Emily liked your profile ❤️"
+    ];
+    const notificationBox = document.getElementById("notification");
+    function showNotification() {
+      let text = notifications[Math.floor(Math.random() * notifications.length)];
+      notificationBox.innerText = text;
+      notificationBox.style.display = "block";
+      setTimeout(() => notificationBox.style.display = "none", 4000);
+    }
+    setInterval(showNotification, 10000);
+  </script>
 </body>
 </html>
