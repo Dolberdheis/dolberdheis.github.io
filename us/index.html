@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find singles in the USA</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background: #e0f7fa; }
-    h1 { color: #2196f3; }
-    a { display: inline-block; margin-top: 20px; padding: 15px 30px; background: #03a9f4; color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; }
-    a:hover { background: #0288d1; }
-  </style>
+    <!-- 这里替换联盟链接 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Dating Hub</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Find singles near you! ❤️</h1>
-  <p>You are not alone 👀</p>
-  <a href="https://your-affiliate-link.com" target="_blank">👉 Find your match today</a>
+    <!-- 导航栏 -->
+    <nav>
+        <div class="logo">DatingHub</div>
+        <div class="geo-switcher">
+            <button data-geo="US" class="active">🇺🇸 US</button>
+            <button data-geo="NO">🇳🇴 NO</button>
+        </div>
+    </nav>
+
+    <!-- 首屏内容 -->
+    <section class="hero">
+        <h1 data-lang="US">Meet local singles tonight — free & anonymous</h1>
+        <h1 data-lang="NO" style="display:none">Møt lokale single i kveld — gratis & anonymt</h1>
+        
+        <p class="subtitle" data-lang="US">Create a free profile and start chatting in minutes.</p>
+        <p class="subtitle" data-lang="NO" style="display:none">Opprett en gratis profil og start å chatte på minutter.</p>
+        
+        <button class="cta-main" onclick="handleCTA()">Start Chatting Now</button>
+        
+        <p class="social-proof" data-lang="US">1,283 people joined in the last 24 hours</p>
+        <p class="social-proof" data-lang="NO" style="display:none">1 283 personer har registrert seg de siste 24 timene</p>
+    </section>
+
+    <!-- GDPR Consent -->
+    <div class="cookie-consent">
+        <p>We use cookies to improve your experience. <a href="#">Learn more</a></p>
+        <button onclick="acceptCookies()">Accept</button>
+        <button onclick="declineCookies()">Decline</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
